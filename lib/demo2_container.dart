@@ -17,7 +17,9 @@ class Demo1App extends StatelessWidget {
 //          margin: EdgeInsets.all(12),
           margin: EdgeInsets.fromLTRB(12, 24, 0, 0),
           decoration: new BoxDecoration(
+              // 线性渐变色
               gradient: const LinearGradient(
+                  // 方向和色值数组。这里设为从上到下的红绿蓝，默认是从左到右
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [Colors.red, Colors.green, Colors.blue])),
