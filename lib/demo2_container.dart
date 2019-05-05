@@ -12,7 +12,16 @@ class Demo1App extends StatelessWidget {
         appBar: AppBar(title: Text("demoContainer")),
         body: Container(
           alignment: Alignment.topLeft,
-          color: Colors.grey,
+//          padding: EdgeInsets.all(12),
+          padding: EdgeInsets.fromLTRB(12, 24, 0, 0),
+//          margin: EdgeInsets.all(12),
+          margin: EdgeInsets.fromLTRB(12, 24, 0, 0),
+          decoration: new BoxDecoration(
+              gradient: const LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.red, Colors.green, Colors.blue])),
+//          color: Colors.grey,
           height: 300,
           width: 200,
           child: Text(
