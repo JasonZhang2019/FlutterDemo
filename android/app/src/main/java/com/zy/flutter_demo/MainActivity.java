@@ -1,4 +1,4 @@
-package com.zy.zy_flutter_demo_app;
+package com.zy.flutter_demo;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
