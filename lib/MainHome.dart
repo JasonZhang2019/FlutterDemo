@@ -3,6 +3,8 @@ import 'package:flutter_demo/pages/PageOne.dart';
 import 'package:flutter_demo/pages/PageThree.dart';
 import 'package:flutter_demo/pages/PageTwo.dart';
 
+import 'package:fluttertoast/fluttertoast.dart';
+
 /// create on 2019/5/21 by JasonZhang
 /// desc：主界面
 class MainHome extends StatelessWidget {
@@ -55,6 +57,14 @@ class MyHomePageState extends State<MyHomePage>
           ],
           currentIndex: mCurrentIndex, // 指定下标值等于mCurrentIndex变量
           onTap: (int index) {
+            Fluttertoast.showToast(
+                msg: "click $index",
+                toastLength: Toast.LENGTH_SHORT, // 默认为LENGTH_SHORT，可改为LENGTH_LONG
+                gravity: ToastGravity.BOTTOM, // 默认为bottom，显示在底部，可改为居中或头部
+                timeInSecForIos: 2, // iOS系统上显示时长，默认为1，单位s
+                backgroundColor: Colors.red, // 背景色，默认为黑色
+                textColor: Colors.white); // 文字颜色，默认为白色
+
             // 点击事件，点击下标值赋给mCurrentIndex，触发改变currentIndex值、刷新底部导航栏的样式
             setState(() {
               mCurrentIndex = index;
