@@ -1,6 +1,7 @@
 # Widget
 
 **Text**
+
 **BottomNavigationBar**
   点击切换，不支持滑动切换
 
@@ -11,3 +12,7 @@
 **Container**
   
 # Fluttertoast
+
+# Navigator
+**Navigator.push**
+**Navigator.pop**
