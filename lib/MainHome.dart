@@ -3,8 +3,6 @@ import 'package:flutter_demo/pages/PageOne.dart';
 import 'package:flutter_demo/pages/PageThree.dart';
 import 'package:flutter_demo/pages/PageTwo.dart';
 
-import 'package:fluttertoast/fluttertoast.dart';
-
 /// create on 2019/5/21 by JasonZhang
 /// desc：主界面
 class MainHome extends StatelessWidget {
