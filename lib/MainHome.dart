@@ -35,26 +35,18 @@ class MyHomePageState extends State<MyHomePage> {
         home: CupertinoTabScaffold(
             tabBar: CupertinoTabBar(
               backgroundColor: Colors.white,
+              iconSize: 24,
               items: [
                 // 底部三个item，指定图标和文案。Icons.home等图标是系统自带提供的。
                 BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.home,
-                    size: 24,
-                  ),
+                  icon: Icon(Icons.home),
                   title: Text('模板中心'),
                 ),
                 BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.list,
-                      size: 24,
-                    ),
+                    icon: Icon(Icons.list),
                     title: Text('我的作品')),
                 BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.message,
-                      size: 24,
-                    ),
+                    icon: Icon(Icons.message),
                     title: Text('我的信息'))
               ],
             ),
