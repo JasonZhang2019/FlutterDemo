@@ -15,6 +15,9 @@ class LoginState extends State<Login> {
   //密码的控制器
   final TextEditingController passwordCtrl = TextEditingController();
 
+  // 光标跳转的密码输入框对象
+  FocusNode pwdNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -33,7 +36,10 @@ class LoginState extends State<Login> {
                 // 指定该输入框是输入手机号码的
                 keyboardType: TextInputType.phone,
                 // 回车键用途，输入下一项。还需要具体实现。
-//                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.next,
+                // 键盘动作按钮点击之后执行的代码：光标切换到指定的输入框
+                onEditingComplete: () =>
+                    FocusScope.of(context).requestFocus(pwdNode),
                 maxLength: 11,
                 decoration: InputDecoration(
                   icon: Icon(Icons.account_circle),
@@ -50,6 +56,7 @@ class LoginState extends State<Login> {
               padding: EdgeInsets.fromLTRB(40, 4, 40, 0),
               child: TextField(
                 controller: passwordCtrl,
+                focusNode: pwdNode,
                 keyboardType: TextInputType.text,
                 // 回车键用途，完成输入
                 textInputAction: TextInputAction.done,
