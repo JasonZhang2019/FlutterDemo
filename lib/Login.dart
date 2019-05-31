@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/common/utils/SharedPreferenceUtil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 /// 2019/5/24 created by 张宇(Jason)
@@ -17,6 +18,18 @@ class LoginState extends State<Login> {
 
   // 光标跳转的密码输入框对象
   FocusNode pwdNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    initAccount();
+  }
+
+  void initAccount() async {
+    String account =
+        await SharedPreferenceUtil.get(SharedPreferenceUtil.KEY_ACCOUNT);
+    userNameCtrl.text = account;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,6 +107,9 @@ class LoginState extends State<Login> {
   }
 
   void doLogin() {
+    SharedPreferenceUtil.save(
+        SharedPreferenceUtil.KEY_ACCOUNT, userNameCtrl.text);
+
     if (userNameCtrl.text.isEmpty || passwordCtrl.text.isEmpty) {
       Fluttertoast.showToast(msg: "请输入用户名和密码");
     } else {
